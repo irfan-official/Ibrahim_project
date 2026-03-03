@@ -19,12 +19,22 @@ const app: Application = express();
 //     })
 // );
 
+// app.use(
+//   cors({
+//     origin: true,
+
+//     credentials: true,
+//   }),
+// );
+
 app.use(
   cors({
-    origin: true,
-
+    origin: [
+      "http://localhost:3000",
+      "https://your-frontend-domain.vercel.app",
+    ],
     credentials: true,
-  }),
+  })
 );
 
 app.use(express.json());
